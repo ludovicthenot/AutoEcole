@@ -1,8 +1,8 @@
 <template>
-  <div class="font-sans text-gray-900 flex flex-col min-h-screen">
+  <div class="app-layout">
     <Navbar />
 
-    <main class="flex-grow">
+    <main class="main-content">
       <router-view />
     </main>
 
@@ -15,11 +15,15 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 </script>
 
-<style>
-@import "tailwindcss";
+<style lang="postcss">
+@reference "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+.app-layout {
+  @apply font-sans text-gray-900 flex flex-col min-h-screen;
+}
+
+.main-content {
+  @apply flex-grow;
 }
 
 body {

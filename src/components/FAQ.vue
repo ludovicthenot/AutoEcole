@@ -1,21 +1,16 @@
 <template>
-  <section id="faq" class="py-12 bg-white">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center border-b-2 border-blue-700 inline-block">
-        Questions Fréquentes
-      </h2>
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Questions Fréquentes</h2>
       
-      <div class="space-y-2">
-        <div v-for="(item, index) in questions" :key="index" class="border border-gray-200 rounded">
-          <button 
-            @click="selectionnerQuestion(index)" 
-            class="w-full text-left px-4 py-3 font-bold flex justify-between items-center hover:bg-gray-50"
-          >
+      <div class="faq-list">
+        <div v-for="(item, index) in questions" :key="index" class="faq-item">
+          <button @click="selectionnerQuestion(index)" class="faq-btn">
             <span>{{ item.question }}</span>
-            <span>{{ indexActif === index ? '-' : '+' }}</span>
+            <span class="faq-toggle">{{ indexActif === index ? '-' : '+' }}</span>
           </button>
           
-          <div v-if="indexActif === index" class="px-4 py-3 text-gray-700 bg-gray-50 border-t border-gray-200">
+          <div v-if="indexActif === index" class="faq-content">
             {{ item.reponse }}
           </div>
         </div>
@@ -56,3 +51,32 @@ const questions = [
   }
 ]
 </script>
+
+<style scoped lang="postcss">
+@reference "tailwindcss";
+
+.faq-section {
+  @apply py-12 bg-white;
+}
+.container {
+  @apply max-w-3xl mx-auto px-4;
+}
+.section-title {
+  @apply text-2xl font-bold text-gray-900 mb-8 text-center border-b-2 border-blue-700 inline-block;
+}
+.faq-list {
+  @apply space-y-2;
+}
+.faq-item {
+  @apply border border-gray-200 rounded overflow-hidden;
+}
+.faq-btn {
+  @apply w-full text-left px-4 py-3 font-bold flex justify-between items-center hover:bg-gray-50 transition;
+}
+.faq-toggle {
+  @apply text-xl;
+}
+.faq-content {
+  @apply px-4 py-3 text-gray-700 bg-gray-50 border-t border-gray-200;
+}
+</style>

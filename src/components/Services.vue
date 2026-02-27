@@ -1,39 +1,36 @@
 <template>
-  <section id="services" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 border-b-4 border-blue-700 inline-block pb-2 mb-4">
-          Nos Formules & Tarifs
-        </h2>
-        <p class="text-gray-600">
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nos Formules & Tarifs</h2>
+        <p class="section-subtitle">
           Nous proposons différentes formations pour répondre à vos besoins.
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div v-for="(formule, index) in listeFormules" :key="index" 
-             class="border border-gray-200 rounded p-6 shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-blue-700 mb-4">{{ formule.nom }}</h3>
-          <p class="text-gray-700 text-sm mb-4">{{ formule.description }}</p>
+      <div class="services-grid">
+        <div v-for="(formule, index) in listeFormules" :key="index" class="service-card">
+          <h3 class="card-title">{{ formule.nom }}</h3>
+          <p class="card-desc">{{ formule.description }}</p>
           
-          <div class="text-2xl font-bold text-gray-900 mb-4">{{ formule.prix }}</div>
+          <div class="card-price">{{ formule.prix }}</div>
           
-          <ul class="text-sm text-gray-600 space-y-2 mb-6">
-            <li v-for="(point, pIndex) in formule.points" :key="pIndex" class="flex items-center">
-              <span class="text-green-600 mr-2">✔</span> {{ point }}
+          <ul class="card-features">
+            <li v-for="(point, pIndex) in formule.points" :key="pIndex" class="feature-item">
+              <span class="check-icon">✔</span> {{ point }}
             </li>
           </ul>
           
-          <router-link to="/contact" class="block w-full text-center bg-blue-700 text-white py-2 rounded hover:bg-blue-600 font-bold transition">
+          <router-link to="/contact" class="card-btn">
             Choisir cette formule
           </router-link>
         </div>
       </div>
 
-      <div class="mt-12 bg-gray-100 p-6 rounded text-center border-l-8 border-blue-700">
-        <h3 class="text-xl font-bold mb-2">Facilités de paiement & Tarifs</h3>
-        <p class="mb-2">Possibilité de régler en 3 fois ou 4 fois sans frais pour les forfaits 20h.</p>
-        <p class="text-sm text-gray-600 italic">Tarif dégressif pour les heures supplémentaires au-delà des 20h obligatoires.</p>
+      <div class="payment-info">
+        <h3 class="info-title">Facilités de paiement & Tarifs</h3>
+        <p class="info-text">Possibilité de régler en 3 fois ou 4 fois sans frais pour les forfaits 20h.</p>
+        <p class="info-note">Tarif dégressif pour les heures supplémentaires au-delà des 20h obligatoires.</p>
       </div>
     </div>
   </section>
@@ -79,3 +76,62 @@ const listeFormules = [
   }
 ]
 </script>
+
+<style scoped lang="postcss">
+@reference "tailwindcss";
+
+.services-section {
+  @apply py-16 bg-white;
+}
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+.section-header {
+  @apply text-center mb-12;
+}
+.section-title {
+  @apply text-3xl font-bold text-gray-900 border-b-4 border-blue-700 inline-block pb-2 mb-4;
+}
+.section-subtitle {
+  @apply text-gray-600;
+}
+.services-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+.service-card {
+  @apply border border-gray-200 rounded p-6 shadow hover:shadow-lg transition;
+}
+.card-title {
+  @apply text-xl font-bold text-blue-700 mb-4;
+}
+.card-desc {
+  @apply text-gray-700 text-sm mb-4;
+}
+.card-price {
+  @apply text-2xl font-bold text-gray-900 mb-4;
+}
+.card-features {
+  @apply text-sm text-gray-600 space-y-2 mb-6;
+}
+.feature-item {
+  @apply flex items-center;
+}
+.check-icon {
+  @apply text-green-600 mr-2;
+}
+.card-btn {
+  @apply block w-full text-center bg-blue-700 text-white py-2 rounded hover:bg-blue-600 font-bold transition;
+}
+.payment-info {
+  @apply mt-12 bg-gray-100 p-6 rounded text-center border-l-8 border-blue-700;
+}
+.info-title {
+  @apply text-xl font-bold mb-2;
+}
+.info-text {
+  @apply mb-2;
+}
+.info-note {
+  @apply text-sm text-gray-600 italic;
+}
+</style>
