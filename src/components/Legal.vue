@@ -6,11 +6,11 @@
       <div class="legal-block">
         <h2 class="block-title">1. Éditeur du site</h2>
         <div class="block-content">
-          <p><strong>Nom de l’entreprise :</strong> Plop auto</p>
+          <p><strong>Nom de l’entreprise :</strong> Accident Auto</p>
           <p><strong>Forme juridique :</strong> SARL</p>
           <p><strong>Adresse du siège social :</strong> 123 Avenue de la République, 75011 Paris</p>
           <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
-          <p><strong>Email :</strong> contact@plopauto.fr</p>
+          <p><strong>Email :</strong> contact@accidentauto.fr</p>
           <p><strong>SIRET :</strong> [Numéro SIRET]</p>
           <p><strong>RCS :</strong> Paris</p>
           <p><strong>Numéro d’agrément préfectoral :</strong> [Obligatoire pour auto-école]</p>
@@ -31,7 +31,7 @@
       <div class="legal-block">
         <h2 class="block-title">3. Propriété intellectuelle</h2>
         <p class="text-gray-700">
-          L’ensemble du contenu présent sur le site (textes, images, logo, graphismes, etc.) est la propriété exclusive de Plop auto, sauf mentions contraires. 
+          L’ensemble du contenu présent sur le site (textes, images, logo, graphismes, etc.) est la propriété exclusive de Accident Auto, sauf mentions contraires. 
           Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.
         </p>
       </div>
@@ -39,14 +39,14 @@
       <div class="legal-block">
         <h2 class="block-title">4. Données personnelles</h2>
         <div class="block-content space-y-4">
-          <p>Les informations collectées via les formulaires sont destinées exclusivement à Plop auto pour :</p>
+          <p>Les informations collectées via les formulaires sont destinées exclusivement à Accident Auto pour :</p>
           <ul class="list">
             <li>Traitement des demandes</li>
             <li>Pré-inscription</li>
             <li>Contact commercial</li>
           </ul>
           <p>Les données ne sont ni revendues ni cédées à des tiers. Conformément au RGPD, l’utilisateur dispose d’un droit d’accès, de rectification et de suppression.</p>
-          <p><strong>Pour exercer ce droit :</strong> contact@plopauto.fr</p>
+          <p><strong>Pour exercer ce droit :</strong> contact@accidentauto.fr</p>
           <p>Les données sont conservées pendant une durée maximale de 3 ans.</p>
         </div>
       </div>
@@ -65,7 +65,7 @@
         <div class="cgv-content">
           <div class="cgv-item">
             <h3 class="item-title">Article 1 – Objet</h3>
-            <p class="item-text">Les présentes CGV définissent les conditions applicables aux prestations proposées par Plop auto relatives à l’enseignement de la conduite et à la préparation aux examens du permis de conduire.</p>
+            <p class="item-text">Les présentes CGV définissent les conditions applicables aux prestations proposées par Accident Auto relatives à l’enseignement de la conduite et à la préparation aux examens du permis de conduire.</p>
           </div>
 
           <div class="cgv-item">
@@ -123,46 +123,98 @@
 <script setup>
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .legal-section {
-  @apply py-16 bg-white;
+  padding: 6rem 0;
+  background-color: var(--white);
 }
+
 .container {
-  @apply max-w-4xl mx-auto px-4;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
+
 .page-title {
-  @apply text-4xl font-bold text-blue-800 mb-12 text-center;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 4rem;
+  text-align: center;
 }
+
 .legal-block {
-  @apply mb-16;
+  margin-bottom: 4rem;
 }
+
 .block-title {
-  @apply text-2xl font-bold text-gray-900 mb-6 border-b-2 border-blue-700 pb-2 uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  border-bottom: 4px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
 }
+
 .block-content {
-  @apply text-gray-700 space-y-2;
+  color: var(--text-medium);
+  line-height: 1.75;
+  font-size: 1.125rem;
 }
+
+.block-content p {
+  margin-bottom: 0.75rem;
+}
+
 .list {
-  @apply list-disc pl-6 space-y-1 text-gray-700;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
 .cgv-section {
-  @apply mb-16;
+  margin-bottom: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e5e7eb; /* Gray 200 */
 }
+
 .cgv-title {
-  @apply text-2xl font-bold text-gray-900 mb-6 border-b-2 border-blue-700 pb-2 uppercase text-center text-blue-800;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .cgv-content {
-  @apply space-y-8;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
+
 .cgv-item {
-  @apply block;
+  display: block;
 }
+
 .item-title {
-  @apply font-bold text-lg mb-2;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
 }
+
 .item-text {
-  @apply text-gray-700;
+  color: var(--text-medium);
+  line-height: 1.75;
+  font-size: 1.125rem;
 }
 </style>

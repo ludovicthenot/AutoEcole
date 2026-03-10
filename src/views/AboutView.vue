@@ -3,7 +3,7 @@
     <div class="page-header">
       <h1 class="page-title">En savoir plus sur nous</h1>
       <p class="page-subtitle">
-        Découvrez l'histoire de Plop auto, nos valeurs et les moyens mis à votre disposition pour votre réussite.
+        Découvrez l'histoire de Accident Auto, nos valeurs et les moyens mis à votre disposition pour votre réussite.
       </p>
     </div>
     <About />
@@ -16,19 +16,32 @@ import About from '../components/About.vue'
 import WhyUs from '../components/WhyUs.vue'
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .page-container {
-  @apply py-12 bg-white min-h-screen;
+  padding: 6rem 0;
+  background-color: var(--white);
+  min-height: 100vh;
 }
+
 .page-header {
-  @apply max-w-7xl mx-auto px-4 text-center mb-12;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+  text-align: center;
+  padding: 0 1.5rem;
 }
+
 .page-title {
-  @apply text-4xl font-extrabold text-blue-900 mb-4 uppercase;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .page-subtitle {
-  @apply text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed;
+  color: var(--text-medium);
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 </style>

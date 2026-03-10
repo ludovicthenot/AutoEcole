@@ -17,3 +17,7 @@ import About from '../components/About.vue'
 import Testimonials from '../components/Testimonials.vue'
 import FAQ from '../components/FAQ.vue'
 </script>
+
+<style scoped>
+/* Les styles sont gérés par les composants individuels */
+</style>

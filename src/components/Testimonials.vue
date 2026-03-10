@@ -27,38 +27,74 @@ const listeAvis = [
     texte: "J'ai adoré ma formation. Le suivi est sérieux et on se sent en sécurité."
   },
   {
-    nom: "Nicolas P.",
-    info: "Stage intensif",
-    texte: "Formation rapide et efficace. J'ai eu mon permis en seulement 3 semaines."
+    nom: "Lucas D.",
+    info: "Permis B",
+    texte: "Manuel m'a appris à démarrer en côte... sur du plat. Une expérience inoubliable, surtout quand il m'a dit que le frein à main, c'était 'juste pour décorer'."
   }
 ]
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .testimonials-section {
-  @apply py-12 bg-gray-50;
+  padding: 6rem 0;
+  background-color: #f9fafb;
 }
-.container {
-  @apply max-w-7xl mx-auto px-4 text-center;
-}
+
 .section-title {
-  @apply text-2xl font-bold mb-8;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  color: var(--text-dark);
+  text-align: center;
 }
+
 .testimonials-grid {
-  @apply grid md:grid-cols-3 gap-6;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .testimonial-card {
-  @apply bg-white p-6 rounded shadow border border-gray-100;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid #f3f4f6;
+  position: relative;
+  transition: all 0.3s ease;
 }
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
 .card-quote {
-  @apply text-gray-600 italic mb-4;
+  color: var(--text-medium);
+  font-style: italic;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
+
 .card-author {
-  @apply font-bold text-blue-700;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 1.25rem;
 }
+
 .card-info {
-  @apply text-xs text-gray-400;
+  font-size: 0.875rem;
+  color: var(--primary-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
 }
 </style>

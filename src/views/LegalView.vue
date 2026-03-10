@@ -8,10 +8,8 @@
 import Legal from '../components/Legal.vue'
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .page-container {
-  @apply py-8;
+  padding: 4rem 0;
 }
 </style>

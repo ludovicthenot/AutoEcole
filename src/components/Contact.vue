@@ -61,7 +61,7 @@
           <div class="checkbox-group">
             <input type="checkbox" id="rgpd" required class="checkbox">
             <label for="rgpd" class="checkbox-label">
-              J'accepte que mes données soient traitées par Plop auto pour ma demande de pré-inscription, 
+              J'accepte que mes données soient traitées par Accident Auto pour ma demande de pré-inscription, 
           conformément à la politique de confidentialité (RGPD).
             </label>
           </div>
@@ -96,61 +96,157 @@ const envoyerFormulaire = () => {
 }
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .contact-section {
-  @apply py-16 bg-gray-100;
+  padding: 6rem 0;
+  background-color: #f3f4f6;
 }
-.container {
-  @apply max-w-4xl mx-auto px-4;
-}
+
 .contact-card {
-  @apply bg-white shadow-lg rounded-lg p-8;
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid #e5e7eb;
 }
+
 .contact-title {
-  @apply text-3xl font-bold text-blue-800 mb-6 text-center;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
+
 .contact-subtitle {
-  @apply text-gray-600 mb-8 text-center;
+  color: var(--text-medium);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
+
 .success-alert {
-  @apply bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-8 rounded shadow;
+  background-color: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  color: #15803d;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
 .alert-title {
-  @apply font-bold;
+  font-weight: 700;
+  font-size: 1.125rem;
 }
+
 .contact-form {
-  @apply space-y-4;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
+
 .form-grid {
-  @apply grid md:grid-cols-2 gap-4;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .form-group {
-  @apply flex flex-col;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
 .label {
-  @apply block text-gray-700 font-bold mb-2;
+  display: block;
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 0.25rem;
 }
-.input {
-  @apply w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-700;
-}
-.select {
-  @apply w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-700;
-}
+
+.input,
+.select,
 .textarea {
-  @apply w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-700;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px #dbeafe;
+  background-color: var(--white);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
 .checkbox-group {
-  @apply flex items-start space-x-2 py-2;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #eff6ff;
+  border-radius: 0.75rem;
+  border: 1px solid #dbeafe;
 }
+
 .checkbox {
-  @apply mt-1 w-4 h-4 text-blue-700;
+  margin-top: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--primary-color);
+  cursor: pointer;
 }
+
 .checkbox-label {
-  @apply text-sm text-gray-600 leading-tight;
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+  cursor: pointer;
 }
+
 .submit-btn {
-  @apply w-full bg-blue-700 text-white py-3 rounded font-bold hover:bg-blue-600 transition shadow-lg;
+  width: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
 }
 </style>

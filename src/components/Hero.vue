@@ -4,11 +4,11 @@
       <div class="hero-card">
         <div class="hero-content">
           <h1 class="hero-title">
-            Bienvenue chez Plop auto
+            Bienvenue chez Accident Auto
           </h1>
           <p class="hero-text">
             Nous vous accompagnons dans l'obtention de votre permis de conduire. 
-            Avec un taux de réussite de <strong class="highlight text-blue-800">78%</strong>, nous sommes fiers de la qualité de notre formation.
+            Avec un taux de réussite de <strong class="highlight">78%</strong>, nous sommes fiers de la qualité de notre formation.
           </p>
           
           <div class="hero-actions">
@@ -36,40 +36,130 @@
 <script setup>
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .hero-section {
-  @apply bg-gray-100 py-16;
+  background: linear-gradient(to right, #f9fafb, #f3f4f6);
+  padding: 5rem 0;
 }
-.container {
-  @apply max-w-7xl mx-auto px-4;
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 7rem 0;
+  }
 }
+
 .hero-card {
-  @apply flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg overflow-hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
+
+@media (min-width: 768px) {
+  .hero-card {
+    flex-direction: row;
+  }
+}
+
 .hero-content {
-  @apply md:w-1/2 p-8 lg:p-12;
+  flex: 1;
 }
+
 .hero-title {
-  @apply text-3xl md:text-5xl font-bold text-blue-800 mb-6;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
 .hero-text {
-  @apply text-gray-700 text-lg mb-8 leading-relaxed;
+  font-size: 1.125rem;
+  color: var(--text-medium);
+  line-height: 1.75;
+  margin-bottom: 2rem;
 }
+
+@media (min-width: 768px) {
+  .hero-text {
+    font-size: 1.25rem;
+  }
+}
+
+.highlight {
+  color: var(--primary-color);
+  background-color: #dbeafe;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
 .hero-actions {
-  @apply flex flex-wrap gap-4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
 }
+
 .btn-fill {
-  @apply bg-blue-700 text-white px-6 py-3 rounded shadow hover:bg-blue-600 transition font-bold;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  font-weight: bold;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
+
+.btn-fill:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
 .btn-outline {
-  @apply border-2 border-blue-700 text-blue-700 px-6 py-3 rounded hover:bg-blue-50 transition font-bold;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: bold;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
+
+.btn-outline:hover {
+  background-color: #eff6ff;
+}
+
 .hero-image-wrapper {
-  @apply md:w-1/2;
+  flex: 1;
+  position: relative;
 }
+
 .hero-image {
-  @apply w-full h-full object-cover;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-2xl);
+  transform: rotate(2deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: rotate(0);
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    transform: none;
+  }
 }
 </style>

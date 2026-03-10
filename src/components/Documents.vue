@@ -76,52 +76,135 @@
 <script setup>
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .documents-section {
-  @apply py-16 bg-white;
+  padding: 6rem 0;
+  background-color: var(--white);
 }
+
 .container {
-  @apply max-w-4xl mx-auto px-4;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
+
 .section-title {
-  @apply text-3xl font-bold text-blue-800 mb-8 text-center uppercase tracking-wide;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .section-subtitle {
-  @apply text-gray-600 mb-12 text-center text-lg;
+  color: var(--text-medium);
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size: 1.125rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
+
 .documents-grid {
-  @apply grid md:grid-cols-2 gap-8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
 }
+
+@media (min-width: 768px) {
+  .documents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .doc-card {
-  @apply bg-blue-50 p-6 rounded-xl border-l-4 border-blue-700 shadow-sm;
+  background-color: #eff6ff;
+  padding: 2rem;
+  border-radius: 1rem;
+  border-left: 8px solid var(--primary-light);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
 }
+
+.doc-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
 .card-title {
-  @apply text-xl font-bold text-blue-900 mb-4 flex items-center gap-2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
+
 .card-icon {
-  @apply w-6 h-6;
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-light);
 }
+
 .doc-list {
-  @apply space-y-3 text-gray-700;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-medium);
 }
+
 .doc-item {
-  @apply flex items-start gap-2;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
+
 .bullet {
-  @apply text-blue-700 font-bold;
+  color: var(--primary-light);
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1;
 }
+
 .doc-footer {
-  @apply mt-12 bg-yellow-50 p-6 rounded-xl border border-yellow-200 text-center;
+  margin-top: 4rem;
+  background-color: #fefce8; /* Yellow 50 */
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #fef08a; /* Yellow 200 */
+  text-align: center;
+  box-shadow: var(--shadow-sm);
 }
+
 .footer-text {
-  @apply text-gray-800 font-medium;
+  color: #1f2937; /* Gray 800 */
+  font-weight: 500;
+  font-size: 1.125rem;
 }
+
 .footer-actions {
-  @apply mt-6;
+  margin-top: 2rem;
 }
+
 .btn-primary {
-  @apply bg-blue-700 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-600 transition shadow-md;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-full);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
 }
 </style>

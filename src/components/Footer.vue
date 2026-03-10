@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h4 class="col-title">Plop auto</h4>
+          <h4 class="col-title">Accident Auto</h4>
           <p class="col-text">
             123 Avenue de la République<br/>
             75011 Paris<br/>
@@ -36,7 +36,7 @@
       </div>
       
       <div class="footer-bottom">
-        &copy; 2026 Plop auto - Réalisé par Ludovic Thenot (Étudiant en BTS SIO SLAM)
+        &copy; 2026 Accident Auto - Réalisé par Ludovic Thenot (Étudiant en BTS SIO SLAM)
       </div>
     </div>
   </footer>
@@ -45,34 +45,68 @@
 <script setup>
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .footer {
-  @apply bg-gray-800 text-white py-8;
+  background-color: #111827;
+  color: var(--white);
+  padding: 4rem 0;
+  border-top: 1px solid #1f2937;
 }
-.container {
-  @apply max-w-7xl mx-auto px-4;
-}
+
 .footer-grid {
-  @apply grid md:grid-cols-3 gap-8 border-b border-gray-700 pb-8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 3rem;
 }
-.footer-col {
-  @apply block;
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
 .col-title {
-  @apply text-lg font-bold mb-4;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .col-text {
-  @apply text-sm text-gray-400;
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.75;
 }
+
 .footer-links {
-  @apply text-sm text-gray-400 space-y-2 grid grid-cols-2 gap-x-4;
+  font-size: 1rem;
+  color: var(--text-light);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1.5rem;
 }
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
 .footer-link {
-  @apply hover:text-white transition;
+  transition: color 0.3s ease;
 }
+
+.footer-link:hover {
+  color: var(--accent-color);
+}
+
 .footer-bottom {
-  @apply text-center mt-8 text-sm text-gray-500;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  font-weight: 500;
 }
 </style>

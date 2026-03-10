@@ -52,31 +52,87 @@ const questions = [
 ]
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .faq-section {
-  @apply py-12 bg-white;
+  padding: 6rem 0;
+  background-color: var(--white);
 }
+
 .container {
-  @apply max-w-3xl mx-auto px-4;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
+
 .section-title {
-  @apply text-2xl font-bold text-gray-900 mb-8 text-center border-b-2 border-blue-700 inline-block;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 0.25rem;
+  background-color: var(--primary-light);
+  margin: 1rem auto 0;
+  border-radius: var(--radius-full);
+}
+
 .faq-list {
-  @apply space-y-2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
 .faq-item {
-  @apply border border-gray-200 rounded overflow-hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
+
+.faq-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
 .faq-btn {
-  @apply w-full text-left px-4 py-3 font-bold flex justify-between items-center hover:bg-gray-50 transition;
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #1f2937; /* Gray 800 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+
+.faq-btn:hover {
+  background-color: #f9fafb; /* Gray 50 */
+}
+
 .faq-toggle {
-  @apply text-xl;
+  font-size: 1.5rem;
+  color: var(--primary-light);
+  font-weight: 300;
 }
+
 .faq-content {
-  @apply px-4 py-3 text-gray-700 bg-gray-50 border-t border-gray-200;
+  padding: 1.25rem 1.5rem;
+  color: var(--text-medium);
+  background-color: #f9fafb; /* Gray 50 */
+  border-top: 1px solid #f3f4f6; /* Gray 100 */
+  line-height: 1.6;
 }
 </style>

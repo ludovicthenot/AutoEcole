@@ -3,7 +3,7 @@
     <div class="container">
       <div class="nav-wrapper">
         <router-link to="/" class="logo">
-          <span class="logo-text">Plop auto</span>
+          <span class="logo-text">Accident Auto</span>
         </router-link>
         
         <div class="nav-links">
@@ -38,52 +38,131 @@ import { ref } from 'vue'
 const menuOuvert = ref(false)
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .navbar {
-  @apply bg-blue-700 shadow-lg sticky top-0 z-50;
+  background-color: rgba(30, 64, 175, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0;
 }
-.container {
-  @apply max-w-7xl mx-auto px-4;
-}
+
 .nav-wrapper {
-  @apply flex justify-between items-center h-16;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
 }
-.logo {
-  @apply flex items-center;
-}
+
 .logo-text {
-  @apply text-xl font-bold text-white uppercase tracking-wide;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
+
+.logo-text:hover {
+  color: var(--accent-color);
+}
+
 .nav-links {
-  @apply hidden md:flex items-center space-x-2;
+  display: none;
 }
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
 .nav-item {
-  @apply text-white hover:bg-blue-800 px-3 py-2 rounded transition;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
+
+.nav-item:hover {
+  color: var(--accent-color);
+}
+
 .nav-item.active {
-  @apply bg-blue-900 font-bold;
+  color: var(--accent-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.25rem;
 }
+
 .btn-primary {
-  @apply bg-yellow-500 text-gray-900 px-4 py-2 rounded font-bold hover:bg-yellow-400 transition ml-2 shadow-md;
+  margin-left: 1rem;
 }
+
 .mobile-toggle {
-  @apply md:hidden;
+  display: block;
 }
+
+@media (min-width: 768px) {
+  .mobile-toggle {
+    display: none;
+  }
+}
+
 .toggle-btn {
-  @apply text-white p-2;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem;
 }
+
 .icon {
-  @apply w-6 h-6;
+  width: 24px;
+  height: 24px;
 }
+
 .mobile-menu {
-  @apply md:hidden bg-blue-800 py-2 border-t border-blue-600 shadow-inner;
+  background-color: var(--primary-dark);
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
 .mobile-item {
-  @apply block text-white px-4 py-3 hover:bg-blue-900 transition;
+  display: block;
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease;
 }
+
+.mobile-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .mobile-btn {
-  @apply block text-center bg-yellow-500 text-gray-900 mx-4 my-2 py-3 rounded font-bold hover:bg-yellow-400 transition;
+  display: block;
+  text-align: center;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+  margin: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: bold;
+}
+
+.mobile-btn:hover {
+  background-color: var(--accent-hover);
 }
 </style>

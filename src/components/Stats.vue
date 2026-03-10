@@ -29,31 +29,72 @@
 <script setup>
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .stats-section {
-  @apply py-12 bg-blue-50;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
 }
-.container {
-  @apply max-w-7xl mx-auto px-4;
-}
+
 .stats-title {
-  @apply text-2xl font-bold text-center mb-8;
+  font-size: 1.875rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
+
 .stats-grid {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-8 text-center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  text-align: center;
 }
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .stat-card {
-  @apply bg-white p-6 rounded shadow;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid #dbeafe;
+  transition: all 0.3s ease;
 }
+
+.stat-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: var(--shadow-2xl);
+}
+
 .stat-number {
-  @apply text-4xl font-bold text-blue-700 mb-2;
+  font-size: 3.75rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--primary-light);
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
+
 .stat-label {
-  @apply text-gray-700 font-bold uppercase;
+  color: #1f2937;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
 }
+
 .stat-desc {
-  @apply text-sm text-gray-500 mt-2;
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  margin-top: 0.75rem;
+  font-weight: 500;
 }
 </style>

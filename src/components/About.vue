@@ -5,7 +5,7 @@
         <div class="about-content">
           <h2 class="about-title">À Propos de nous</h2>
           <p class="about-intro">
-            Située en plein cœur de la ville, <strong>Plop auto</strong> est née d'une passion pour l'enseignement de la conduite sécurisée. 
+            Située en plein cœur de la ville, <strong>Accident Auto</strong> est née d'une passion pour l'enseignement de la conduite sécurisée. 
             Notre objectif est simple : vous offrir un accompagnement personnalisé pour faire de vous un conducteur serein et responsable.
           </p>
           
@@ -17,10 +17,10 @@
                 </svg>
               </div>
               <div class="feature-text">
-                <h3 class="feature-title"></h3>
+                <h3 class="feature-title">Votre Moniteur : Manuel</h3>
                 <p class="feature-desc">
-                  Diplômé d'État avec plus de 10 ans d'expérience, Ludovic vous accompagne avec patience et pédagogie. 
-                  Son approche personnalisée permet d'atteindre un taux de réussite de 78%.
+                  Tout juste titulaire de son permis depuis mardi dernier, Manuel découvrira la route en même temps que vous !
+                  Sa méthode pédagogique est simple : "Si je passe, tu passes". Profitez de sa fraîcheur (et de ses hésitations aux ronds-points) pour une formation pleine de surprises.
                 </p>
               </div>
             </div>
@@ -34,8 +34,8 @@
               <div class="feature-text">
                 <h3 class="feature-title">Nos Véhicules : Renault Clio</h3>
                 <p class="feature-desc">
-                  Apprenez sur nos nouvelles **Renault Clio**, réputées pour leur confort et leur maniabilité. 
-                  Nous disposons de modèles en **boîte manuelle** et en **boîte automatique** pour s'adapter à votre choix de formation.
+                  Apprenez sur nos nouvelles <strong>Renault Clio</strong>, réputées pour leur confort et leur maniabilité. 
+                  Nous disposons de modèles en <strong>boîte manuelle</strong> et en <strong>boîte automatique</strong> pour s'adapter à votre choix de formation.
                 </p>
               </div>
             </div>
@@ -43,7 +43,7 @@
 
           <div class="about-actions">
             <router-link to="/formules" class="btn-primary">
-              Découvrir nos formations
+              Découvrir nos formules
             </router-link>
           </div>
         </div>
@@ -69,70 +69,174 @@
 <script setup>
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .about-section {
-  @apply py-16 bg-white;
+  padding: 6rem 0;
+  background-color: var(--white);
 }
-.container {
-  @apply max-w-7xl mx-auto px-4;
-}
+
 .about-wrapper {
-  @apply flex flex-col md:flex-row gap-12 items-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
 }
+
+@media (min-width: 768px) {
+  .about-wrapper {
+    flex-direction: row;
+  }
+}
+
 .about-content {
-  @apply md:w-1/2;
+  flex: 1;
 }
+
 .about-title {
-  @apply text-3xl font-bold text-gray-900 mb-6 border-l-8 border-blue-700 pl-4 uppercase tracking-wider;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  border-left: 8px solid var(--primary-color);
+  padding-left: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .about-intro {
-  @apply text-gray-700 mb-6 text-lg leading-relaxed;
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
 }
+
 .feature-list {
-  @apply space-y-6;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
 .feature-item {
-  @apply flex items-start gap-4;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
 }
+
 .icon-box {
-  @apply bg-blue-100 p-3 rounded-full text-blue-700;
+  background-color: #eff6ff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .icon {
-  @apply w-6 h-6;
+  width: 2rem;
+  height: 2rem;
 }
+
 .feature-text {
-  @apply flex-1;
+  flex: 1;
 }
+
 .feature-title {
-  @apply font-bold text-gray-900 text-xl mb-1;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
+
 .feature-desc {
-  @apply text-gray-600;
+  color: var(--text-medium);
+  line-height: 1.6;
 }
+
 .about-actions {
-  @apply mt-10;
+  margin-top: 3rem;
 }
+
 .btn-primary {
-  @apply inline-block bg-blue-700 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-600 transition shadow-md;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-full);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
 }
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
 .about-image-wrapper {
-  @apply md:w-1/2;
+  flex: 1;
 }
+
 .image-container {
-  @apply relative;
+  position: relative;
 }
+
 .about-image {
-  @apply rounded-2xl shadow-2xl border-4 border-white;
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-2xl);
+  border: 4px solid var(--white);
+  transform: rotate(1deg);
+  transition: transform 0.5s ease;
 }
+
+.about-image:hover {
+  transform: rotate(0);
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    transform: none;
+  }
+}
+
 .stat-badge {
-  @apply absolute -bottom-6 -left-6 bg-yellow-500 text-gray-900 p-6 rounded-xl shadow-xl hidden lg:block;
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-xl);
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
 }
+
+.stat-badge:hover {
+  transform: rotate(0);
+}
+
+@media (max-width: 1024px) {
+  .stat-badge {
+    display: none;
+  }
+}
+
 .stat-num {
-  @apply text-3xl font-extrabold;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  line-height: 1;
 }
+
 .stat-label {
-  @apply font-bold text-sm uppercase;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 </style>

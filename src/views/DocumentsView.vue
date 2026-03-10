@@ -23,31 +23,58 @@
 import Documents from '../components/Documents.vue'
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .page-container {
-  @apply py-8 bg-white min-h-screen;
+  padding: 4rem 0;
+  background-color: var(--white);
+  min-height: 100vh;
 }
+
 .container {
-  @apply max-w-7xl mx-auto px-4;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
+
 .breadcrumb {
-  @apply flex mb-8 text-sm text-gray-500;
+  display: flex;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-light);
 }
+
 .breadcrumb-list {
-  @apply inline-flex items-center space-x-1 md:space-x-3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
 .breadcrumb-item {
-  @apply inline-flex items-center;
+  display: inline-flex;
+  align-items: center;
 }
+
 .breadcrumb-link {
-  @apply hover:text-blue-700;
+  color: var(--text-medium);
+  transition: color 0.2s ease;
 }
+
+.breadcrumb-link:hover {
+  color: var(--primary-color);
+}
+
 .breadcrumb-separator {
-  @apply flex items-center;
+  display: flex;
+  align-items: center;
 }
+
+.breadcrumb-separator span {
+  margin: 0 0.5rem;
+  color: var(--text-light);
+}
+
 .breadcrumb-current {
-  @apply font-medium text-gray-900;
+  font-weight: 500;
+  color: var(--text-dark);
 }
 </style>

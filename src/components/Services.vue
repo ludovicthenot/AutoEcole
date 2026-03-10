@@ -4,7 +4,7 @@
       <div class="section-header">
         <h2 class="section-title">Nos Formules & Tarifs</h2>
         <p class="section-subtitle">
-          Nous proposons différentes formations pour répondre à vos besoins.
+          Choisissez la formation qui vous correspond. Toutes nos formules incluent un accompagnement personnalisé par Manuel, votre moniteur dédié.
         </p>
       </div>
       
@@ -77,61 +77,156 @@ const listeFormules = [
 ]
 </script>
 
-<style scoped lang="postcss">
-@reference "tailwindcss";
-
+<style scoped>
 .services-section {
-  @apply py-16 bg-white;
+  padding: 6rem 0;
+  background-color: #f9fafb;
 }
-.container {
-  @apply max-w-7xl mx-auto px-4;
-}
+
 .section-header {
-  @apply text-center mb-12;
+  text-align: center;
+  margin-bottom: 4rem;
 }
+
 .section-title {
-  @apply text-3xl font-bold text-gray-900 border-b-4 border-blue-700 inline-block pb-2 mb-4;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
 }
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 6rem;
+  height: 0.375rem;
+  background-color: var(--primary-color);
+  margin: 1rem auto 0;
+  border-radius: var(--radius-full);
+}
+
 .section-subtitle {
-  @apply text-gray-600;
+  color: var(--text-medium);
+  font-size: 1.125rem;
+  max-width: 42rem;
+  margin: 1rem auto 0;
 }
+
 .services-grid {
-  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .service-card {
-  @apply border border-gray-200 rounded p-6 shadow hover:shadow-lg transition;
+  background-color: var(--white);
+  border: 1px solid #f3f4f6;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
 }
+
+.service-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: var(--shadow-xl);
+}
+
 .card-title {
-  @apply text-xl font-bold text-blue-700 mb-4;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
 }
+
 .card-desc {
-  @apply text-gray-700 text-sm mb-4;
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
+
 .card-price {
-  @apply text-2xl font-bold text-gray-900 mb-4;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
 }
+
 .card-features {
-  @apply text-sm text-gray-600 space-y-2 mb-6;
+  margin-bottom: 2rem;
 }
+
 .feature-item {
-  @apply flex items-center;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  color: var(--text-medium);
 }
+
 .check-icon {
-  @apply text-green-600 mr-2;
+  color: #22c55e;
+  margin-right: 0.75rem;
+  font-weight: bold;
 }
+
 .card-btn {
-  @apply block w-full text-center bg-blue-700 text-white py-2 rounded hover:bg-blue-600 font-bold transition;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--text-dark);
+  color: var(--white);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
+
+.card-btn:hover {
+  background-color: var(--primary-color);
+}
+
 .payment-info {
-  @apply mt-12 bg-gray-100 p-6 rounded text-center border-l-8 border-blue-700;
+  margin-top: 4rem;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow-sm);
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .info-title {
-  @apply text-xl font-bold mb-2;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
+
 .info-text {
-  @apply mb-2;
+  margin-bottom: 0.5rem;
 }
+
 .info-note {
-  @apply text-sm text-gray-600 italic;
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  font-style: italic;
 }
 </style>
