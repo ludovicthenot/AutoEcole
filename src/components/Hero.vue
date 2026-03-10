@@ -40,6 +40,7 @@
 .hero-section {
   background: linear-gradient(to right, #f9fafb, #f3f4f6);
   padding: 5rem 0;
+  animation: fadeIn 1s ease-out;
 }
 
 @media (min-width: 1024px) {
@@ -63,6 +64,8 @@
 
 .hero-content {
   flex: 1;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.2s forwards;
 }
 
 .hero-title {
@@ -142,6 +145,8 @@
 .hero-image-wrapper {
   flex: 1;
   position: relative;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 .hero-image {

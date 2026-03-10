@@ -86,6 +86,8 @@ const listeFormules = [
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
 }
 
 .section-title {
@@ -118,6 +120,8 @@ const listeFormules = [
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
 }
 
 @media (min-width: 768px) {

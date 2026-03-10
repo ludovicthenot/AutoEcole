@@ -102,6 +102,26 @@
   color: var(--accent-color);
 }
 
+@media (max-width: 768px) {
+  .footer-grid {
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .col-title {
+    text-align: center;
+  }
+
+  .col-text {
+    text-align: center;
+  }
+}
+
 .footer-bottom {
   text-align: center;
   margin-top: 3rem;

@@ -103,6 +103,23 @@ const menuOuvert = ref(false)
 
 .btn-primary {
   margin-left: 1rem;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--text-dark); /* Ensure text color stays dark on hover */
 }
 
 .mobile-toggle {
