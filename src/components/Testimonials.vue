@@ -17,17 +17,17 @@
 <script setup>
 const listeAvis = [
   {
-    nom: "Thomas L.",
+    nom: "Thomas Leroy",
     info: "Permis obtenu du 1er coup",
     texte: "Très bonne auto-école. Les moniteurs sont patients et expliquent très bien."
   },
   {
-    nom: "Sarah M.",
+    nom: "Sarah Martin",
     info: "Formation AAC",
     texte: "J'ai adoré ma formation. Le suivi est sérieux et on se sent en sécurité."
   },
   {
-    nom: "Lucas D.",
+    nom: "Lucas Dubois",
     info: "Permis B",
     texte: "Manuel m'a appris à démarrer en côte... sur du plat. Une expérience inoubliable, surtout quand il m'a dit que le frein à main, c'était 'juste pour décorer'."
   }

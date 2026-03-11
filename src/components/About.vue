@@ -3,7 +3,7 @@
     <div class="container">
       <div class="about-wrapper">
         <div class="about-content">
-          <h2 class="about-title">À Propos de nous</h2>
+          <h2 class="about-title">À Propos de Accident Auto</h2>
           <p class="about-intro">
             Située en plein cœur de la ville, <strong>Accident Auto</strong> est née d'une passion pour l'enseignement de la conduite sécurisée. 
             Notre objectif est simple : vous offrir un accompagnement personnalisé pour faire de vous un conducteur serein et responsable.
@@ -12,24 +12,19 @@
           <div class="feature-list">
             <div class="feature-item">
               <div class="icon-box">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+                <MapPin />
               </div>
               <div class="feature-text">
-                <h3 class="feature-title">Votre Moniteur : Manuel</h3>
+                <h3 class="feature-title">Emplacement Idéal</h3>
                 <p class="feature-desc">
-                  Tout juste titulaire de son permis depuis mardi dernier, Manuel découvrira la route en même temps que vous !
-                  Sa méthode pédagogique est simple : "Si je passe, tu passes". Profitez de sa fraîcheur (et de ses hésitations aux ronds-points) pour une formation pleine de surprises.
+                  Proche des lycées et des transports en commun, notre agence est facile d'accès pour tous nos élèves.
                 </p>
               </div>
             </div>
 
             <div class="feature-item">
               <div class="icon-box">
-                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
+                <CarFront />
               </div>
               <div class="feature-text">
                 <h3 class="feature-title">Nos Véhicules : Renault Clio</h3>
@@ -39,25 +34,38 @@
                 </p>
               </div>
             </div>
+
+            <div class="feature-item">
+              <div class="icon-box">
+                <UserCheck />
+              </div>
+              <div class="feature-text">
+                <h3 class="feature-title">Votre Moniteur : Manuel</h3>
+                <p class="feature-desc">
+                  Tout juste titulaire de son permis depuis mardi dernier, Manuel découvrira la route en même temps que vous !
+                  Sa méthode pédagogique est simple : "Si je passe, tu passes". Profitez de sa fraîcheur (et de ses hésitations aux ronds-points) pour une formation pleine de surprises.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div class="about-actions">
             <router-link to="/formules" class="btn-primary">
-              Découvrir nos formules
+              Découvrir nos formations
             </router-link>
           </div>
         </div>
-        
+
         <div class="about-image-wrapper">
           <div class="image-container">
             <img 
-              src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=800" 
-              alt="Véhicule Auto-école" 
+              src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+              alt="Moniteur auto-école" 
               class="about-image"
             />
             <div class="stat-badge">
-              <div class="stat-num">78%</div>
-              <div class="stat-label">Taux de réussite</div>
+              <div class="stat-num">98%</div>
+              <div class="stat-label">de Satisfaction</div>
             </div>
           </div>
         </div>
@@ -67,6 +75,7 @@
 </template>
 
 <script setup>
+import { MapPin, CarFront, UserCheck } from 'lucide-vue-next';
 </script>
 
 <style scoped>

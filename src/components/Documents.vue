@@ -10,9 +10,7 @@
       <div class="documents-grid">
         <div class="doc-card">
           <h3 class="card-title">
-            <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
-            </svg>
+            <IdCard class="card-icon" />
             Identité & Photos
           </h3>
           <ul class="doc-list">
@@ -33,9 +31,7 @@
 
         <div class="doc-card">
           <h3 class="card-title">
-            <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
+            <FileText class="card-icon" />
             Justificatifs & Santé
           </h3>
           <ul class="doc-list">
@@ -58,7 +54,7 @@
           </ul>
         </div>
       </div>
-
+      
       <div class="doc-footer">
         <p class="footer-text">
           <strong>Note :</strong> Nous pouvons vous accompagner dans la numérisation de vos documents lors de votre passage à l'agence.
@@ -74,6 +70,7 @@
 </template>
 
 <script setup>
+import { IdCard, FileText } from 'lucide-vue-next';
 </script>
 
 <style scoped>
