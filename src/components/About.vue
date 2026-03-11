@@ -131,22 +131,6 @@ import { MapPin, CarFront, UserCheck } from 'lucide-vue-next';
   gap: 1.25rem;
 }
 
-.icon-box {
-  background-color: #eff6ff;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  color: var(--primary-color);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon {
-  width: 2rem;
-  height: 2rem;
-}
-
 .feature-text {
   flex: 1;
 }
@@ -165,24 +149,6 @@ import { MapPin, CarFront, UserCheck } from 'lucide-vue-next';
 
 .about-actions {
   margin-top: 3rem;
-}
-
-.btn-primary {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 1rem 2.5rem;
-  border-radius: var(--radius-full);
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-lg);
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xl);
 }
 
 .about-image-wrapper {

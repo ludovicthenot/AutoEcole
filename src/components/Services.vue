@@ -9,7 +9,7 @@
       </div>
       
       <div class="services-grid">
-        <div v-for="(formule, index) in listeFormules" :key="index" class="service-card">
+        <div v-for="(formule, index) in listeFormules" :key="index" class="service-card card-base">
           <h3 class="card-title">{{ formule.nom }}</h3>
           <p class="card-desc">{{ formule.description }}</p>
           
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div class="payment-info">
+      <div class="payment-info card-base">
         <h3 class="info-title">Facilités de paiement & Tarifs</h3>
         <p class="info-text">Possibilité de régler en 3 fois ou 4 fois sans frais pour les forfaits 20h.</p>
         <p class="info-note">Tarif dégressif pour les heures supplémentaires au-delà des 20h obligatoires.</p>
@@ -84,36 +84,8 @@ const listeFormules = [
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: 4rem;
   opacity: 0;
   animation: fadeIn 0.8s ease-out 0.2s forwards;
-}
-
-.section-title {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 6rem;
-  height: 0.375rem;
-  background-color: var(--primary-color);
-  margin: 1rem auto 0;
-  border-radius: var(--radius-full);
-}
-
-.section-subtitle {
-  color: var(--text-medium);
-  font-size: 1.125rem;
-  max-width: 42rem;
-  margin: 1rem auto 0;
 }
 
 .services-grid {
@@ -137,19 +109,8 @@ const listeFormules = [
 }
 
 .service-card {
-  background-color: var(--white);
-  border: 1px solid #f3f4f6;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: var(--shadow-xl);
 }
 
 .card-title {
@@ -207,12 +168,7 @@ const listeFormules = [
 
 .payment-info {
   margin-top: 4rem;
-  background-color: var(--white);
-  padding: 2rem;
-  border-radius: 1rem;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  box-shadow: var(--shadow-sm);
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;

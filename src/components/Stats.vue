@@ -78,6 +78,7 @@
   margin-bottom: 1rem;
   color: var(--primary-light);
   background: linear-gradient(to right, #2563eb, #60a5fa);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;

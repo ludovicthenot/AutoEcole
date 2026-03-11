@@ -71,25 +71,16 @@ import { Trophy, Handshake, Car, CreditCard } from 'lucide-vue-next';
 }
 
 .section-header {
-  text-align: center;
   margin-bottom: 5rem;
 }
 
 .section-title {
-  font-size: 2.25rem;
-  font-weight: 800;
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: var(--white);
 }
 
 .section-subtitle {
   color: #bfdbfe;
-  font-size: 1.125rem;
-  max-width: 48rem;
-  margin: 0 auto;
-  line-height: 1.75;
 }
 
 .why-grid {
