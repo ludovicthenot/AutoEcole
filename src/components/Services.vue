@@ -21,9 +21,9 @@
             </li>
           </ul>
           
-          <router-link to="/contact" class="card-btn">
+          <a href="/formulaire.html" class="card-btn">
             Choisir cette formule
-          </router-link>
+          </a>
         </div>
       </div>
 

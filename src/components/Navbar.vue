@@ -10,7 +10,8 @@
           <router-link to="/" class="nav-item" active-class="active" exact-active-class="active">Accueil</router-link>
           <router-link to="/formules" class="nav-item" active-class="active">Formules</router-link>
           <router-link to="/documents" class="nav-item" active-class="active">Documents</router-link>
-          <router-link to="/s-inscrire" class="btn-primary">S'inscrire</router-link>
+          <a href="/connexion.html" class="nav-item">Connexion</a>
+          <a href="/formulaire.html" class="btn-primary">S'inscrire</a>
         </div>
 
         <div class="mobile-toggle">
@@ -26,7 +27,8 @@
       <router-link to="/" @click="menuOuvert = false" class="mobile-item">Accueil</router-link>
       <router-link to="/formules" @click="menuOuvert = false" class="mobile-item">Formules</router-link>
       <router-link to="/documents" @click="menuOuvert = false" class="mobile-item">Documents</router-link>
-      <router-link to="/s-inscrire" @click="menuOuvert = false" class="mobile-btn">S'inscrire</router-link>
+      <a href="/connexion.html" class="mobile-item">Connexion</a>
+      <a href="/formulaire.html" class="mobile-btn">S'inscrire</a>
     </div>
   </nav>
 </template>

@@ -12,9 +12,9 @@
           </p>
           
           <div class="hero-actions">
-            <router-link to="/contact" class="btn-fill">
+            <a href="/formulaire.html" class="btn-fill">
               S'inscrire en ligne
-            </router-link>
+            </a>
             <router-link to="/formules" class="btn-outline">
               Voir nos tarifs
             </router-link>

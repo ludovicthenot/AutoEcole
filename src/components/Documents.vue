@@ -60,9 +60,9 @@
           <strong>Note :</strong> Nous pouvons vous accompagner dans la numérisation de vos documents lors de votre passage à l'agence.
         </p>
         <div class="footer-actions">
-          <router-link to="/contact" class="btn-primary">
+          <a href="/formulaire.html" class="btn-primary">
             S'inscrire en ligne maintenant
-          </router-link>
+          </a>
         </div>
       </div>
     </div>
