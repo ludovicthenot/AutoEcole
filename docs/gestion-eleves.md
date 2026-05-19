@@ -8,7 +8,7 @@ Cette fonctionnalite permet d enregistrer des eleves dans une base MySQL compati
 
 - `public/formulaire.html` : formulaire d inscription simple et responsive.
 - `public/connexion.html` : formulaire de connexion simple et responsive.
-- `api/db.php` : connexion PDO a la base de donnees.
+- `api/db.php` : connexion PDO a la base de donnees, avec TLS TiDB Cloud et creation automatique de la table si elle manque.
 - `api/ajouter-eleve.php` : validation et insertion d un eleve.
 - `api/connexion.php` : verification du mot de passe et message de connexion.
 - `api/liste-eleves.php` : affichage des eleves enregistres.
@@ -40,6 +40,8 @@ Ajouter ces variables dans Vercel, dans les parametres du projet :
 - `DB_PASSWORD`
 
 La connexion TiDB Cloud utilise TLS automatiquement. Le code utilise d abord le certificat racine disponible sur le serveur, puis le certificat inclus dans `certs/isrgrootx1.pem` si besoin.
+
+La table `eleves` est aussi creee automatiquement au premier appel PHP si elle n existe pas encore. Le fichier `database/auto_ecole.sql` reste disponible pour creer la table manuellement dans TiDB.
 
 Optionnel seulement si vous voulez forcer un certificat precis :
 

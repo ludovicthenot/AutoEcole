@@ -52,6 +52,43 @@ function tidb_ssl_ca_path(): string
     throw new RuntimeException('Aucun certificat TLS lisible pour TiDB Cloud.');
 }
 
+function pdo_mysql_attribute(string $modernConstant, string $legacyConstant): ?int
+{
+    if (defined($modernConstant)) {
+        return constant($modernConstant);
+    }
+
+    if (defined($legacyConstant)) {
+        return constant($legacyConstant);
+    }
+
+    return null;
+}
+
+function ensure_database_schema(PDO $pdo): void
+{
+    static $schemaReady = false;
+
+    if ($schemaReady) {
+        return;
+    }
+
+    $pdo->exec(
+        "CREATE TABLE IF NOT EXISTS eleves (
+            id_eleve INT AUTO_INCREMENT PRIMARY KEY,
+            nom VARCHAR(100) NOT NULL,
+            prenom VARCHAR(100) NOT NULL,
+            email VARCHAR(150) NOT NULL UNIQUE,
+            telephone VARCHAR(20),
+            type_permis VARCHAR(50),
+            mot_de_passe VARCHAR(255) NOT NULL,
+            date_inscription DATE DEFAULT (CURRENT_DATE)
+        )"
+    );
+
+    $schemaReady = true;
+}
+
 function get_pdo(): PDO
 {
     $host = env_value('DB_HOST');
@@ -77,15 +114,23 @@ function get_pdo(): PDO
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
 
-    if (defined('PDO::MYSQL_ATTR_SSL_CA')) {
-        $options[constant('PDO::MYSQL_ATTR_SSL_CA')] = tidb_ssl_ca_path();
+    $sslCaAttribute = pdo_mysql_attribute('Pdo\Mysql::ATTR_SSL_CA', 'PDO::MYSQL_ATTR_SSL_CA');
+    if ($sslCaAttribute !== null) {
+        $options[$sslCaAttribute] = tidb_ssl_ca_path();
     }
 
-    if (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')) {
-        $options[constant('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')] = true;
+    $sslVerifyAttribute = pdo_mysql_attribute(
+        'Pdo\Mysql::ATTR_SSL_VERIFY_SERVER_CERT',
+        'PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT'
+    );
+    if ($sslVerifyAttribute !== null) {
+        $options[$sslVerifyAttribute] = true;
     }
 
-    return new PDO($dsn, $user, $password, $options);
+    $pdo = new PDO($dsn, $user, $password, $options);
+    ensure_database_schema($pdo);
+
+    return $pdo;
 }
 
 function e(?string $value): string
