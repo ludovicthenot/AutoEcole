@@ -12,6 +12,7 @@ Cette fonctionnalite permet d enregistrer des eleves dans une base MySQL compati
 - `api/ajouter-eleve.php` : validation et insertion d un eleve.
 - `api/connexion.php` : verification du mot de passe et message de connexion.
 - `api/liste-eleves.php` : affichage des eleves enregistres.
+- `certs/isrgrootx1.pem` : certificat racine utilise pour la connexion TLS a TiDB Cloud.
 - `database/auto_ecole.sql` : script SQL de creation de la base et de la table.
 - `vercel.json` : activation du runtime PHP pour Vercel.
 
@@ -38,9 +39,12 @@ Ajouter ces variables dans Vercel, dans les parametres du projet :
 - `DB_USER`
 - `DB_PASSWORD`
 
-Optionnel si votre base demande un certificat SSL :
+La connexion TiDB Cloud utilise TLS automatiquement. Le code utilise d abord le certificat racine disponible sur le serveur, puis le certificat inclus dans `certs/isrgrootx1.pem` si besoin.
+
+Optionnel seulement si vous voulez forcer un certificat precis :
 
 - `DB_SSL_CA`
+- `DB_SSL_CA_CONTENT`
 
 Optionnel pour afficher le detail technique des erreurs pendant les tests :
 
