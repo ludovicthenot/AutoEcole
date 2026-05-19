@@ -3,7 +3,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/db.php';
 
-function render_login_message(string $title, string $message, int $status = 200): void
+function is_debug_enabled(): bool
+{
+    return getenv('APP_DEBUG') === 'true';
+}
+
+function render_login_message(string $title, string $message, int $status = 200, ?Throwable $exception = null): void
 {
     http_response_code($status);
     header('Content-Type: text/html; charset=UTF-8');
@@ -24,6 +29,9 @@ function render_login_message(string $title, string $message, int $status = 200)
     <main>
       <h1><?= e($title) ?></h1>
       <p><?= e($message) ?></p>
+      <?php if ($exception && is_debug_enabled()): ?>
+        <p><strong>Detail technique :</strong> <?= e($exception->getMessage()) ?></p>
+      <?php endif; ?>
       <p><a href="/connexion.html">Retour connexion</a> | <a href="/">Retour au site</a></p>
     </main>
   </body>
@@ -66,5 +74,6 @@ try {
 
     render_login_message('Connexion reussie', 'Bonjour ' . $eleve['prenom'] . ', vous etes connecte a votre compte.');
 } catch (Throwable $exception) {
-    render_login_message('Erreur configuration', 'Verifiez les variables Vercel de connexion a la base de donnees.', 500);
+    error_log('Erreur connexion eleve: ' . $exception->getMessage());
+    render_login_message('Erreur configuration', 'Verifiez les variables Vercel de connexion a la base de donnees.', 500, $exception);
 }

@@ -3,7 +3,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/db.php';
 
-function render_message(string $title, string $message, int $status = 200): void
+function is_debug_enabled(): bool
+{
+    return getenv('APP_DEBUG') === 'true';
+}
+
+function render_message(string $title, string $message, int $status = 200, ?Throwable $exception = null): void
 {
     http_response_code($status);
     header('Content-Type: text/html; charset=UTF-8');
@@ -24,6 +29,9 @@ function render_message(string $title, string $message, int $status = 200): void
     <main>
       <h1><?= e($title) ?></h1>
       <p><?= e($message) ?></p>
+      <?php if ($exception && is_debug_enabled()): ?>
+        <p><strong>Detail technique :</strong> <?= e($exception->getMessage()) ?></p>
+      <?php endif; ?>
       <p><a href="/connexion.html">Se connecter</a> | <a href="/formulaire.html">Retour au formulaire</a></p>
     </main>
   </body>
@@ -99,12 +107,15 @@ try {
 
     render_message('Compte cree', 'Votre compte eleve a bien ete cree. Vous pouvez maintenant vous connecter.');
 } catch (PDOException $exception) {
+    error_log('Erreur PDO inscription eleve: ' . $exception->getMessage());
+
     if ($exception->getCode() === '23000') {
         render_message('Compte deja existant', 'Un compte existe deja avec cet email.', 409);
         exit;
     }
 
-    render_message('Erreur base de donnees', 'Impossible d enregistrer l eleve pour le moment.', 500);
+    render_message('Erreur base de donnees', 'Impossible d enregistrer l eleve pour le moment.', 500, $exception);
 } catch (Throwable $exception) {
-    render_message('Erreur configuration', 'Verifiez les variables Vercel de connexion a la base de donnees.', 500);
+    error_log('Erreur configuration inscription eleve: ' . $exception->getMessage());
+    render_message('Erreur configuration', 'Verifiez les variables Vercel de connexion a la base de donnees.', 500, $exception);
 }

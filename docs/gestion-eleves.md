@@ -42,6 +42,10 @@ Optionnel si votre base demande un certificat SSL :
 
 - `DB_SSL_CA`
 
+Optionnel pour afficher le detail technique des erreurs pendant les tests :
+
+- `APP_DEBUG=true`
+
 ## Tests a realiser
 
 - Envoyer un formulaire vide : l inscription doit etre refusee.

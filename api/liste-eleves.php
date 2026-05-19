@@ -14,6 +14,7 @@ try {
     );
     $eleves = $stmt->fetchAll();
 } catch (Throwable $exception) {
+    error_log('Erreur liste eleves: ' . $exception->getMessage());
     http_response_code(500);
     $eleves = null;
 }
